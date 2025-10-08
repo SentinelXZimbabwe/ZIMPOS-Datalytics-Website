@@ -7,71 +7,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Reset & Base */
+    /* Base */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: #f7f9fc; color: #1f2937; line-height: 1.6; scroll-behavior: smooth; }
+    body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; scroll-behavior: smooth; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
     /* Header */
-    header { background-color: #1f2937; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+    header { background-color: #111827; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
     .logo { display: flex; align-items: center; gap: 0.5rem; }
-    .logo img { height: 60px; width: auto; }
-    header h1 { font-size: 1.8rem; font-weight: 700; }
-    nav a { margin-left: 1.5rem; font-weight: 600; color: white; transition: color 0.3s; display: inline-flex; align-items: center; gap: 0.3rem; }
-    nav a:hover { color: #3b82f6; }
+    .logo img { height: 50px; width: auto; }
+    header h1 { font-size: 1.8rem; font-weight: 700; color: #0ea5e9; }
+    nav { display: flex; gap: 1.5rem; align-items: center; }
+    nav a { font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; color: white; transition: color 0.3s; }
+    nav a:hover { color: #0ea5e9; }
+
+    /* Hamburger */
+    .hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; gap: 1rem; background-color: #111827; padding: 1rem 2rem; position: absolute; top: 100%; right: 0; width: 200px; border-radius: 0 0 0.5rem 0.5rem; }
 
     /* Hero */
-    .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5rem 2rem; text-align: center; background: linear-gradient(to right, #3b82f6, #2563eb); color: white; border-radius: 0 0 2rem 2rem; }
+    .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5rem 2rem; text-align: center; background: linear-gradient(to right,#0ea5e9,#2563eb); color: white; border-radius: 0 0 2rem 2rem; }
     .hero h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; max-width: 900px; }
     .hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem; }
-    .hero button { background-color: #10b981; color: white; padding: 0.75rem 2rem; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 0.75rem; cursor: pointer; transition: background 0.3s, transform 0.3s; }
-    .hero button:hover { background-color: #059669; transform: scale(1.05); }
+    .hero button { background-color: #14b8a6; color: white; padding: 0.75rem 2rem; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 0.75rem; cursor: pointer; transition: background 0.3s, transform 0.3s; }
+    .hero button:hover { background-color: #0d9488; transform: scale(1.05); }
 
     /* Sections */
     section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
-    section h3 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; color: #111827; justify-content: center; }
+    section h3 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; color: #f8fafc; justify-content: center; }
 
     /* Features */
     .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; justify-items: center; }
-    .feature-card { background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 6px 15px rgba(0,0,0,0.05); text-align: center; width: 100%; max-width: 320px; transition: transform 0.3s, box-shadow 0.3s; }
-    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .feature-card i { font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem; }
+    .feature-card { background-color: #1e293b; border-radius: 1rem; padding: 2rem; box-shadow: 0 6px 15px rgba(0,0,0,0.3); text-align: center; width: 100%; max-width: 320px; transition: transform 0.3s, box-shadow 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+    .feature-card i { font-size: 2.5rem; color: #14b8a6; margin-bottom: 1rem; }
     .feature-card h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .feature-card p { font-size: 1rem; color: #6b7280; margin-bottom: 1rem; }
-    .feature-card button { background-color: #3b82f6; color: white; padding: 0.5rem 1.5rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s; }
+    .feature-card p { font-size: 1rem; color: #cbd5e1; margin-bottom: 1rem; }
+    .feature-card button { background-color: #0ea5e9; color: white; padding: 0.5rem 1.5rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s; }
     .feature-card button:hover { background-color: #2563eb; }
 
     /* CTA */
-    .cta { background-color: #e0f2fe; padding: 4rem 2rem; text-align: center; border-radius: 1rem; margin: 3rem 0; }
-    .cta h2 { font-size: 2rem; margin-bottom: 1rem; }
-    .cta p { font-size: 1.1rem; margin-bottom: 1.5rem; }
-    .cta button { background-color: #10b981; color: white; padding: 0.75rem 2rem; font-size: 1rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s, transform 0.3s; }
-    .cta button:hover { background-color: #059669; transform: scale(1.05); }
+    .cta { background-color: #0f172a; padding: 4rem 2rem; text-align: center; border-radius: 1rem; margin: 3rem 0; }
+    .cta h2 { font-size: 2rem; margin-bottom: 1rem; color: #0ea5e9; }
+    .cta p { font-size: 1.1rem; margin-bottom: 1.5rem; color: #cbd5e1; }
+    .cta button { background-color: #14b8a6; color: white; padding: 0.75rem 2rem; font-size: 1rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s, transform 0.3s; }
+    .cta button:hover { background-color: #0d9488; transform: scale(1.05); }
 
     /* Pricing */
     .pricing { text-align: center; }
-    .pricing h2 { margin-bottom: 2rem; }
+    .pricing h2 { margin-bottom: 2rem; color: #0ea5e9; }
     .pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; justify-items: center; }
-    .price-card { background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 6px 15px rgba(0,0,0,0.05); text-align: center; width: 100%; max-width: 320px; transition: transform 0.3s, box-shadow 0.3s; }
-    .price-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .price-card i { font-size: 2rem; color: #10b981; margin-bottom: 1rem; }
-    .price-card h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .price-card p { font-size: 1rem; color: #6b7280; margin-bottom: 1rem; }
-    .price-card span { display: block; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #111827; }
-    .price-card button { background-color: #3b82f6; color: white; padding: 0.5rem 1.5rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s; }
+    .price-card { background-color: #1e293b; border-radius: 1rem; padding: 2rem; box-shadow: 0 6px 15px rgba(0,0,0,0.3); text-align: center; width: 100%; max-width: 320px; transition: transform 0.3s, box-shadow 0.3s; }
+    .price-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+    .price-card i { font-size: 2rem; color: #14b8a6; margin-bottom: 1rem; }
+    .price-card h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #f8fafc; }
+    .price-card p { font-size: 1rem; color: #cbd5e1; margin-bottom: 1rem; }
+    .price-card span { display: block; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #f8fafc; }
+    .price-card button { background-color: #0ea5e9; color: white; padding: 0.5rem 1.5rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s; }
     .price-card button:hover { background-color: #2563eb; }
 
     /* Footer */
-    footer { background-color: #1f2937; color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
-    footer a { color: #3b82f6; }
+    footer { background-color: #111827; color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
+    footer a { color: #0ea5e9; }
 
     /* Responsive */
     @media (max-width:768px){
-      .hero h2 { font-size: 2rem; }
-      .hero p { font-size: 1.1rem; max-width: 90%; }
+      nav { display: none; }
+      .hamburger { display: block; color: white; }
+      .mobile-menu { display: flex; flex-direction: column; gap: 1rem; }
       .features, .pricing-cards { grid-template-columns: 1fr; }
-      .logo img { height: 50px; }
     }
   </style>
 </head>
@@ -83,11 +88,17 @@
       <img src="logo/logo.png" alt="ZIMPOS Logo">
       <h1>ZIMPOS</h1>
     </div>
-    <nav>
+    <nav id="desktopMenu">
       <a href="#features"><i class="fas fa-boxes"></i> Features</a>
       <a href="#pricing"><i class="fas fa-tags"></i> Pricing</a>
       <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#features"><i class="fas fa-boxes"></i> Features</a>
+      <a href="#pricing"><i class="fas fa-tags"></i> Pricing</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
   </header>
 
   <!-- Hero -->
@@ -152,6 +163,20 @@
     <p>&copy; 2025 Sentinel-X Systems. All rights reserved.</p>
     <p>Contact: <a href="mailto:info@sentinelxzw.com"><i class="fas fa-envelope"></i> info@sentinelxzw.com</a></p>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      if(mobileMenu.style.display === 'flex'){
+        mobileMenu.style.display = 'none';
+      } else {
+        mobileMenu.style.display = 'flex';
+      }
+    });
+  </script>
 
 </body>
 </html>
