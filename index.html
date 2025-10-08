@@ -16,7 +16,9 @@
 
   /* Header */
   header { background-color:#111827; color:white; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
-  .logo h1 { font-size:1.8rem; font-weight:700; color:#0ea5e9; display:flex; align-items:center; gap:0.5rem; }
+  .logo { display:flex; align-items:center; gap:0.5rem; }
+  .logo img { height:50px; width:auto; }
+  .logo h1 { font-size:1.8rem; font-weight:700; color:#0ea5e9; }
   nav { display:flex; gap:1.5rem; align-items:center; }
   nav a { font-weight:600; display:inline-flex; align-items:center; gap:0.3rem; color:white; transition: color 0.3s; }
   nav a:hover { color:#0ea5e9; }
@@ -66,7 +68,8 @@
 
 <header>
   <div class="logo">
-    <h1><i class="fas fa-cash-register"></i> ZIMPOS</h1>
+    <img src="logo/logo.png" alt="ZIMPOS Logo">
+    <h1>ZIMPOS</h1>
   </div>
   <nav>
     <a href="#features"><i class="fas fa-boxes"></i> Features</a>
