@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIMPOS - Datalytics | Sentinel-X Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: #f7f9fc; color: #1f2937; line-height: 1.6; scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Header */
+    header { background-color: #1f2937; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+    .logo { display: flex; align-items: center; gap: 0.5rem; }
+    .logo img { height: 60px; width: auto; }
+    header h1 { font-size: 1.8rem; font-weight: 700; }
+    nav a { margin-left: 1.5rem; font-weight: 600; color: white; transition: color 0.3s; display: inline-flex; align-items: center; gap: 0.3rem; }
+    nav a:hover { color: #3b82f6; }
+
+    /* Hero */
+    .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5rem 2rem; text-align: center; background: linear-gradient(to right, #3b82f6, #2563eb); color: white; border-radius: 0 0 2rem 2rem; }
+    .hero h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; max-width: 900px; }
+    .hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem; }
+    .hero button { background-color: #10b981; color: white; padding: 0.75rem 2rem; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 0.75rem; cursor: pointer; transition: background 0.3s, transform 0.3s; }
+    .hero button:hover { background-color: #059669; transform: scale(1.05); }
+
+    /* Sections */
+    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+    section h3 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; color: #111827; justify-content: center; }
+
+    /* Features */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; justify-items: center; }
+    .feature-card { background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 6px 15px rgba(0,0,0,0.05); text-align: center; width: 100%; max-width: 320px; transition: transform 0.3s, box-shadow 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .feature-card i { font-size: 2.5rem; color: #3b82f6; margin-bottom: 1rem; }
+    .feature-card h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feature-card p { font-size: 1rem; color: #6b7280; margin-bottom: 1rem; }
+    .feature-card button { background-color: #3b82f6; color: white; padding: 0.5rem 1.5rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s; }
+    .feature-card button:hover { background-color: #2563eb; }
+
+    /* CTA */
+    .cta { background-color: #e0f2fe; padding: 4rem 2rem; text-align: center; border-radius: 1rem; margin: 3rem 0; }
+    .cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .cta p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .cta button { background-color: #10b981; color: white; padding: 0.75rem 2rem; font-size: 1rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s, transform 0.3s; }
+    .cta button:hover { background-color: #059669; transform: scale(1.05); }
+
+    /* Pricing */
+    .pricing { text-align: center; }
+    .pricing h2 { margin-bottom: 2rem; }
+    .pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; justify-items: center; }
+    .price-card { background-color: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 6px 15px rgba(0,0,0,0.05); text-align: center; width: 100%; max-width: 320px; transition: transform 0.3s, box-shadow 0.3s; }
+    .price-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .price-card i { font-size: 2rem; color: #10b981; margin-bottom: 1rem; }
+    .price-card h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .price-card p { font-size: 1rem; color: #6b7280; margin-bottom: 1rem; }
+    .price-card span { display: block; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #111827; }
+    .price-card button { background-color: #3b82f6; color: white; padding: 0.5rem 1.5rem; font-weight: 600; border: none; border-radius: 0.5rem; cursor: pointer; transition: background 0.3s; }
+    .price-card button:hover { background-color: #2563eb; }
+
+    /* Footer */
+    footer { background-color: #1f2937; color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
+    footer a { color: #3b82f6; }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .hero h2 { font-size: 2rem; }
+      .hero p { font-size: 1.1rem; max-width: 90%; }
+      .features, .pricing-cards { grid-template-columns: 1fr; }
+      .logo img { height: 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo/logo.png" alt="ZIMPOS Logo">
+      <h1>ZIMPOS</h1>
+    </div>
+    <nav>
+      <a href="#features"><i class="fas fa-boxes"></i> Features</a>
+      <a href="#pricing"><i class="fas fa-tags"></i> Pricing</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>🚀 Datalytics by Sentinel-X Systems</h2>
+    <p>The ultimate Point of Sale system for businesses in Zimbabwe. Manage sales, inventory, and analytics seamlessly.</p>
+    <button onclick="window.open('https://beta.zimpos.shop/', '_blank')"><i class="fas fa-external-link-alt"></i> Visit the App</button>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="feature-card">
+      <i class="fas fa-chart-line"></i>
+      <h4>Real-time Analytics</h4>
+      <p>Track sales, revenue, and customer trends instantly.</p>
+      <button onclick="window.location.href='readmore.html'"><i class="fas fa-info-circle"></i> Read More</button>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-boxes-stacked"></i>
+      <h4>Inventory Management</h4>
+      <p>Keep your stock organized and receive low inventory alerts.</p>
+      <button onclick="window.location.href='readmore.html'"><i class="fas fa-info-circle"></i> Read More</button>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-shield-alt"></i>
+      <h4>Secure Transactions</h4>
+      <p>All sales and payments are encrypted and auditable.</p>
+      <button onclick="window.location.href='readmore.html'"><i class="fas fa-info-circle"></i> Read More</button>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>💼 Start Using ZIMPOS Today!</h2>
+    <p>Click below to open the app and manage your shop operations efficiently.</p>
+    <button onclick="window.open('https://beta.zimpos.shop/', '_blank')"><i class="fas fa-external-link-alt"></i> Open ZIMPOS App</button>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <h2>💰 Pricing Plans</h2>
+    <div class="pricing-cards">
+      <div class="price-card">
+        <i class="fas fa-dollar-sign"></i>
+        <h4>Standard</h4>
+        <p>Basic POS for small shops</p>
+        <span>$50/month</span>
+        <button onclick="window.location.href='readmore.html'"><i class="fas fa-info-circle"></i> Read More</button>
+      </div>
+      <div class="price-card">
+        <i class="fas fa-star"></i>
+        <h4>Premium</h4>
+        <p>Includes priority support</p>
+        <span>$100/month</span>
+        <button onclick="window.location.href='readmore.html'"><i class="fas fa-info-circle"></i> Read More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2025 Sentinel-X Systems. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@sentinelxzw.com"><i class="fas fa-envelope"></i> info@sentinelxzw.com</a></p>
+  </footer>
+
+</body>
+</html>
