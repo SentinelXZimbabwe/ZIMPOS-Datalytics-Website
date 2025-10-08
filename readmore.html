@@ -13,11 +13,13 @@
   a { text-decoration:none; color:inherit; }
   img { max-width:100%; display:block; }
 
+  /* Header */
   header { background-color:#1f2937; color:white; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; }
   header h1 { font-size:1.8rem; font-weight:700; }
   nav a { margin-left:1.5rem; font-weight:600; color:white; transition:color 0.3s; }
   nav a:hover { color:#3b82f6; }
 
+  /* Sections */
   section { padding:3rem 2rem; max-width:1200px; margin:auto; }
   section h3 { font-size:2rem; font-weight:700; margin-bottom:1rem; color:#111827; display:flex; align-items:center; gap:0.5rem; justify-content:center; }
   section p, ul li { font-size:1.1rem; margin-bottom:1rem; color:#374151; }
@@ -59,6 +61,7 @@
   @media(max-width:768px){
     .hero h2 { font-size:2rem; }
     .hero p { font-size:1.1rem; }
+    nav a { display:block; margin:0.5rem 0; }
   }
 </style>
 </head>
